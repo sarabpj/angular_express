@@ -8,6 +8,16 @@ app.service('TodoService', function($http){
         data: {todo: {todo: content}}
       }
       return $http(req)
+    },
+
+    getTodos: function(){
+     var req = {
+        method: "GET",
+        url: '/todos',
+     }
+
+      return $http(req)
+
     }
   }
 

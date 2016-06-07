@@ -23,6 +23,9 @@ router.post('/',function(req,res){
           }
         })
       })
+      .catch(function(err){
+        console.log(err, "ERROR")
+      })
   });
 
 

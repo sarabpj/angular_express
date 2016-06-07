@@ -1,5 +1,8 @@
 <h1>To Do App</h1>
 <form name="todoForm" ng-submit="home.submitTodo()">
   <input type="text" name="todo" ng-model="home.todo" required>
-  <input type="submit">
 </form>
+
+<div ng-repeat="todo in home.getTodos">
+  {{todo.todo}}
+</div>
