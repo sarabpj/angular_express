@@ -3,8 +3,11 @@
   <input type="text" name="todo" ng-model="home.todo" required>
 </form>
 
-<div ng-repeat="todo in home.getTodos">
-  <span></span>
+<ul>
+<li ng-repeat="todo in home.getTodos">
+  
+  <input type="checkbox" name='checkbox'>
   {{todo.todo}}
-  <span></span>
-</div>
+  <span class="glyphicon glyphicon-trash"></span>
+</li>
+</ul>
