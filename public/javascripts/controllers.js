@@ -8,24 +8,25 @@ function homeController(TodoService){
    vm.submitTodo = function(){
       TodoService.createTodo(vm.todo)
         .then(function(){
-            vm.todo = ''
+          viewTodos();
         })
         .catch(function(err){
           console.log(err)
         })
+    vm.todo = ''
    };
 
-  (function viewTodos(){
+  var viewTodos = function(){
      TodoService.getTodos()
       .then(function(data){
-        console.log(data.data.todos)
+        // console.log(data.data.todos)
         vm.getTodos= data.data.todos;
       })
       .catch(function(err){
         console.log(err)
       })
-   })();
-
+   };
+    viewTodos();
 
 
 }
